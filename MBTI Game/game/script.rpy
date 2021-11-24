@@ -11,7 +11,8 @@ image lots:
         yalign .4
         linear 1.0 yalign .25
 
-image period = Text("0교시", size=50, color="#000000", xpos=0.5, ypos=0.5)        # 임시-교시 표기
+image period_0 = Text("0교시", size=25, color="#000000", xpos=75, ypos=75)
+image period_1 = Text("1교시", size=25, color="#000000", xpos=75, ypos=75)        # 임시-교시 표기
 
 
 # 게임에서 사용할 캐릭터를 정의합니다.
@@ -83,7 +84,7 @@ label start:
         n "오늘은 새 학기 첫 날이다. {p}우리 반 친구들은 어떤 애들일까?"
 
         # [화면 전환 추가]
-        show period
+        show period_0
 
         e "안뇽! 나는 ENFP야. 넌 이름이 뭐야?"
         $ player_name = renpy.call_screen("set_name", title="당신의 이름은?")
@@ -100,7 +101,7 @@ label start:
 
         ht "모두 자리에 앉아라!"
         ht "자, 오늘은 첫날이니까 자리를 뽑을 거다. {p}뽑는 순서는 그냥 번호 순서대로 나오면 된다."
-        hide period
+        hide period_0
         show draw_box
         call screen draw_button
 
@@ -114,7 +115,11 @@ label start:
                 call screen draw_num(drawNumber)
 
         p "나는… [drawNumber]번이네."
-        e "나는 17번인데, 까비!"
+	$ e_drawNum = drawNumber + 2
+    	$ f_drawNum = drawNumber + 1
+	$ t_drawNum = drawNumber - 3
+    	$ s_drawNum = drawNumber - 5
+    	e "나는 [e_drawNum]번인데, 까비!"
         s "휴, 쟤랑 짝은 안됐다. 다행이네."
 
         ## (자리 배치도 사진)
@@ -125,6 +130,8 @@ label start:
 
 
         #1교시
+	show period_1
+
         p "영어시간이네. 열심히 해보자!"
         et "Hello~ How are you guys?"
         et "Today, we will introduce ourselves!" 
@@ -134,7 +141,7 @@ label start:
         hide e with dissolve
         
         et "You guys have your own numbers right?"
-        et "Number 9! Please introduce yourself." 
+        et "Number [t_drawNum]! Please introduce yourself." 
         
         show t
         t "Hi my name is INTP. I like to solve problems with logic and analyze them. I'm not that talkative, but when it comes to my areas of interest I talk a lot. Thank you!"
@@ -148,19 +155,19 @@ label start:
         s "내 번호는 안 불렸으면 좋겠다…."
         hide s
         
-        et "Good job! Next… number 4!"
+        et "Good job! Next… number [s_drawNum]!"
         
         show s
         s "Hi my name is ISFP. I like creative activities. Also I like playing with my friends. Thank you!"
         hide s
 
-        et "Very good! Next...number 16!"
+        et "Very good! Next...number [f_drawNum]!"
 
         show f
         f "Hi my name is INFP. I interact well with people. Also, I enjoy challenging something. Thank you!"
         hide f
 
-        et "Good. Next..number 17!"
+        et "Good. Next..number [e_drawNum]!"
 
         show e
         e "Hi my name is ENFP. I enjoy trying different things. Also, I get along well with people. Thank you!"
@@ -191,32 +198,27 @@ label start:
         
         ## (행맨게임화면)
         
+	python:
+        word = renpy.random.choice(["friend", "school"])
+        letters = ""
+
+        while True:
+            isSuccess = True
+            for w in word:
+                if w in letters:
+                    renpy.say(n, "[w] ")
+                else:
+                    renpy.say(n, "_ ")
+                    isSuccess = False
+            if isSuccess == True:
+                break
+
+            letter = renpy.input ("Input letter >")
+            if letter not in letters:
+                letters += letter
+
+
         et "The prize was a round of applause. See you next time."
 
-
-
-
-        ##<종소리>(학교전체사진) 
-    
-        #2교시 수학 - 오목
-        #모르는 문제가 있음
-        
-        mt "자리에 앉아라! 바로 수업 들어갈게 시간이 없단다."
-        mt "교과서는 다들 들고 왔겠지? 16페이지 펴고, 다항식 들어간다~"
-        
-        e "하.. 이 쌤 빡세다ㅠㅠ 벌써 잠오는거 같은데?"
-        f "역시 수학은 재밌군. 이번에 공부 열심히해서 만점 받아야지"
-        s "첫날부터 수업이네, 책 안가지고 왔는데…"
-        t "음 이게 저거니까... 오케이 이해됐다. 쉬운데?"
-
-        mt "여기서 문제를 내도록 하지 9x^2 + 42x + 49를 인수분해 해보시오."
-
-        p "아 어렵네..옆 친구한테 물어봐야겠다"
-        p "혹시 이것 좀 알려줄 수 있어?"
-        f "후훗. 이건 말이지 이렇게 이렇게 해서 답은(3x+7)제곱 이란다."
-        
-        mt "오늘 수업은 여기까지 하고 남은시간은 놀지 말고 짝이랑 오목 게임을 해보자." 
-        
-        ##(오목 게임 화면)
-        
+   
         return
