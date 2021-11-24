@@ -24,6 +24,56 @@ define ht = Character('담임 선생님', color="#353535")
 define et = Character('영어 선생님', color="#353535")
 define mt = Character('수학 선생님', color="#353535")
 
+##호감도 창
+
+define persistent.love = [0, 0, 0, 0]
+
+init:
+    screen stat_overlay:
+
+        frame:
+            padding (15,15)
+            align(1.0, 0.0)
+            xmaximum 250
+            ymaximum 250
+            vbox:
+                text "INTP{space=15}[persistent.love[0]]" size 16
+                bar:
+                    value persistent.love[0]
+                    range 100
+                    style "fixed_bar"
+                text " " size 3
+                text "ENFP{space=15}[persistent.love[1]]" size 16
+                bar:
+                    value persistent.love[1]
+                    range 100
+                    xalign 0.0
+                    style "fixed_bar"
+                text " " size 3
+                text "INFP{space=15}[persistent.love[2]]" size 16
+                bar:
+                    value persistent.love[2]
+                    range 100
+                    xalign 0.0
+                    style "fixed_bar"
+                text " " size 3
+                text "ISFP{space=15}[persistent.love[3]]" size 16
+                bar:
+                    value persistent.love[3]
+                    range 100
+                    xalign 0.0
+                    style "fixed_bar"
+                text " " size 3
+init -5 python:
+    style.fixed_bar = Style(style.default)
+    style.fixed_bar.xmaximum = 200
+    style.fixed_bar.ymaximum = 15
+    style.fixed_bar.left_gutter = 0
+    style.fixed_bar.right_gutter = 0
+    style.fixed_bar.left_bar = Frame("images/bar_full.png", 0, 0)
+    style.fixed_bar.right_bar = Frame("images/bar_empty.png", 0, 0)
+
+
 
 # 여기에서부터 게임이 시작합니다.
 label start:
@@ -119,6 +169,22 @@ label start:
         et "Very good~. Well, we had a little time to get to know our classmates."
 
         p "나와 잘 맞는 친구는 누굴까??"
+       
+        menu:
+            "INTP":
+                 $ persistent.love[0] +=10
+                 "INTP에대한호감도가1상승했습니다."
+            "ENFP":
+                 $ persistent.love[1] +=10
+                 "ENFP에대한호감도가1상승했습니다."
+            "INFP":
+                 $ persistent.love[2] +=10
+                 "INFP에대한호감도가1상승했습니다."
+            "ISFP":
+                 $ persistent.love[3] +=10
+                 "ISFP에대한호감도가1상승했습니다."
+
+        show screen stat_overlay
         
         et "As you know, memorizing words is important so.."
         et "Let’s play the Hangman game! If your answer is correct, I will give you a prize."
