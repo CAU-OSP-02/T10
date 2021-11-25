@@ -217,18 +217,22 @@ label start:
                  $ persistent.love[0] +=10
                  show t with dissolve
                  "INTP에 대한 호감도가 10 상승했습니다."
+                 hide t with dissolve
             "ENFP":
                  $ persistent.love[1] +=10
                  show e with dissolve
                  "ENFP에 대한 호감도가 10 상승했습니다."
+                 hide e with dissolve
             "INFP":
                  $ persistent.love[2] +=10
                  show f with dissolve
                  "INFP에 대한 호감도가 10 상승했습니다."
+                 hide f with dissolve
             "ISFP":
                  $ persistent.love[3] +=10
                  show s with dissolve
                  "ISFP에 대한 호감도가 10 상승했습니다."
+                 hide s with dissolve
 
         show screen stat_overlay with dissolve
         pause(2.0)
