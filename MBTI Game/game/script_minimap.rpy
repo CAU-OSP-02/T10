@@ -9,13 +9,11 @@ label shoppingmall_pressed:
     return
 
 label theater_pressed:
-    scene bg theater
-    "Theater was pressed"
+    call theater
     return
 
 label PCroom_pressed:
-    scene bg PCroom
-    "PC room was pressed"
+    call PCroom
     return
 
 label concert_pressed:
