@@ -2,9 +2,17 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 75: u'return' is not a keyword argument or valid child for the screen statement.
-    return
-          ^
+File "game/script_shoppingmall.rpy", line 84: Line is followed by a block, despite not being a menu choice. Did you forget a colon at the end of the line?
+    "아니야, 별로 안 기다렸어. 대신에 간식 네가 쏘기다~!"
+                                     ^
+
+File "game/script_shoppingmall.rpy", line 182: Line is followed by a block, despite not being a menu choice. Did you forget a colon at the end of the line?
+    "인테리어 소품? 사서 뭐하게? 요즘 방 꾸미는 게 취미야?"
+                                      ^
+
+File "game/script_shoppingmall.rpy", line 225: Line is followed by a block, despite not being a menu choice. Did you forget a colon at the end of the line?
+    "직원 분이랑 할 얘기가 뭐 그리 많아~ 우리 얼른 가자. 나 조금 피곤해..."
+                                                 ^
 
 Ren'Py Version: Ren'Py 7.4.10.2178
-Thu Nov 25 06:09:06 2021
+Thu Dec 16 08:24:47 2021
