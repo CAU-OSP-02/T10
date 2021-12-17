@@ -4,6 +4,14 @@
 ## 의 '#' 표시로 시작되는 줄은 주석 처리된 코드로 필요한 경우 제거해도 됩니다.
 
 
+init python:
+    config.keymap = dict(
+        anykey = ['K_q', 'K_w', 'K_e', 'K_r', 'K_t', 'K_y', 'K_u', 'K_i', 'K_o', 'K_p',
+                    'K_a', 'K_s', 'K_d', 'K_f', 'K_g', 'K_h', 'K_j', 'K_k', 'K_l',
+                    'K_z', 'K_x', 'K_c', 'K_v', 'K_b', 'K_n', 'K_m' ]
+        )
+
+
 ## 기본 ##########################################################################
 
 ## 인간이 읽을 수 있는 게임의 이름. 기본 윈도우의 제목으로 사용되며, 인터페이스
@@ -117,7 +125,7 @@ define config.window_hide_transition = Dissolve(.2)
 ## 기본 글자 속도를 제어합니다. 기본적으로, 0은 즉시이며 다른 숫자는 초당 입력
 ## 할 문자 수입니다.
 
-default preferences.text_cps = 50
+default preferences.text_cps = 20
 
 
 ## 기본 auto-forward 지연 시간입니다. 숫자가 클수록 대기 시간이 길어지며, 0 ~ 30

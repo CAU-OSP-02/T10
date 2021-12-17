@@ -368,7 +368,7 @@ define gui.nvl_list_length = 6
 
 ## NVL-모드 항목의 높이입니다. 이것을 None으로 설정하면 항목들은 동적으로 높이를
 ## 조정합니다.
-define gui.nvl_height = 115
+define gui.nvl_height = None
 
 ## gui.nvl_height 값이 None일 때 NVL-모드 항목들, 그리고 NVL-모드 항목들과 NVL-
 ## 모드 메뉴간의 간의 간격입니다.
@@ -388,10 +388,11 @@ define gui.nvl_text_xalign = 0.0
 
 ## nvl_thought 글자의 위치, 너비, 정렬(nvl_narrator 캐릭터에 의해 표시되는 글자)
 ## 입니다.
-define gui.nvl_thought_xpos = 240
-define gui.nvl_thought_ypos = 0
+define gui.nvl_thought_xpos = 260
+define gui.nvl_thought_ypos = .5
 define gui.nvl_thought_width = 780
 define gui.nvl_thought_xalign = 0.0
+define gui.nvl_thought_line_spacing = 10
 
 ## NVL 메뉴 버튼의 위치입니다.
 define gui.nvl_button_xpos = 450
