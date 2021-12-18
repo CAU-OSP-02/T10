@@ -136,8 +136,8 @@ style window:
     yalign gui.textbox_yalign
     ysize gui.textbox_height
 
-    # background Image("gui/textbox.png", xalign=0.5, yalign=1.0)
-    background Solid("00000035")
+    background Image("gui/textbox.png", xalign=0.5, yalign=1.0)
+    # background Solid("00000035")
 
 style namebox:
     xpos gui.name_xpos
@@ -161,20 +161,6 @@ style say_dialogue:
     xsize gui.dialogue_width
     ypos gui.dialogue_ypos
     line_spacing gui.dialogue_text_line_spacing
-
-
-## 이름 Input 스크린 ##############################################################
-screen set_name(title):
-    frame:
-        xpadding 30
-        ypadding 30
-        xalign 0.5
-        yalign 0.5
-        vbox:
-            spacing 20
-            text title xalign 0.5
-            input
-            xalign 0.5
 
 
 ## Input 스크린 ###################################################################
@@ -292,30 +278,6 @@ style quick_button:
 
 style quick_button_text:
     properties gui.button_text_properties("quick_button")
-
-
-## 사용자 정의 스크린 ##############################################################
-## 뽑기 버튼
-screen draw_button:
-    frame:
-        xalign .5
-        yalign .6
-        textbutton "뽑기":
-            action Jump('draw')
-
-## 뽑은 숫자
-screen draw_num(drawNum):
-    frame:
-        xpadding 30
-        ypadding 30
-        xalign 0.5
-        yalign 0.5
-        vbox:
-            text "[drawNum]" size 30
-            textbutton "닫기":
-                 # text_style
-                 action Return(True)
-
 
 
 ################################################################################
@@ -1383,11 +1345,12 @@ style nvl_dialogue:
 style nvl_thought:
     xpos gui.nvl_thought_xpos
     xanchor gui.nvl_thought_xalign
-    ypos gui.nvl_thought_ypos
+    yalign gui.nvl_thought_yalign
     xsize gui.nvl_thought_width
     min_width gui.nvl_thought_width
     text_align gui.nvl_thought_xalign
     layout ("subtitle" if gui.nvl_text_xalign else "tex")
+    line_spacing gui.nvl_thought_line_spacing
 
 style nvl_button:
     properties gui.button_properties("nvl_button")
