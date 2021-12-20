@@ -139,7 +139,7 @@ define gui.dialogue_width = 744
 define gui.dialogue_text_xalign = 0.0
 
 ## 대사 줄 간격입니다.
-# define gui.dialogue_text_line_spacing = 0
+define gui.dialogue_text_line_spacing = 7
 
 
 ## 버튼들 #########################################################################
@@ -392,7 +392,7 @@ define gui.nvl_thought_xpos = 260
 define gui.nvl_thought_yalign = .5
 define gui.nvl_thought_width = 780
 define gui.nvl_thought_xalign = 0.0
-define gui.nvl_thought_line_spacing = 0
+define gui.nvl_thought_line_spacing = 10
 
 ## NVL 메뉴 버튼의 위치입니다.
 define gui.nvl_button_xpos = 450

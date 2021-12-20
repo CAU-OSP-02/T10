@@ -3,7 +3,6 @@
 ## 두 개의 '#' 표시로 시작되는 줄은 주석이며, 그것을 없애지 말아야 합니다. 한 개
 ## 의 '#' 표시로 시작되는 줄은 주석 처리된 코드로 필요한 경우 제거해도 됩니다.
 
-
 init python:
     config.keymap = dict(
         anykey = ['K_q', 'K_w', 'K_e', 'K_r', 'K_t', 'K_y', 'K_u', 'K_i', 'K_o', 'K_p',
@@ -30,7 +29,7 @@ define gui.show_name = True
 
 ## 게임의 버전입니다.
 
-# define config.version = "1.0"
+define config.version = "1.0"
 
 
 ## 게임의 about 스크린에 배치되는 텍스트입니다. 텍스트를 삼중 따옴표 사이에 배치
@@ -148,7 +147,7 @@ default preferences.afm_time = 15
 ## 이것은 일반적으로 변경해서는 안 되며, 항상 표현형식이 아닌 정확한 문자열이어
 ## 야 합니다.
 
-define config.save_directory = "MBTI-1637239686"
+define config.save_directory = "MBTIv2-1638352218"
 
 
 ## Icon ########################################################################
