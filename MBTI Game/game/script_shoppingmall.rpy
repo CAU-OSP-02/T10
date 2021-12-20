@@ -9,35 +9,6 @@ image empty_heart:
          size(30,30)
 image restaurant_menu = "restaurant_menu.png"
 
-#친밀도 창
-init:
-    screen stat_overlay:
-
-        frame:
-            padding (15,15)
-            align(1.0, 0.0)
-            xmaximum 250
-            ymaximum 250
-            vbox:
-                text "친밀도" size 20
-                bar:
-                    value friendship
-                    range 100
-                    style "fixed_bar"
-                text " " size 3
-           
-init -5 python:
-    style.fixed_bar = Style(style.default)
-    style.fixed_bar.xmaximum = 200
-    style.fixed_bar.ymaximum = 30
-    style.fixed_bar.left_gutter = 0
-    style.fixed_bar.right_gutter = 0
-    style.fixed_bar.left_bar = Frame("images/heart.png", 0, 0)
-    style.fixed_bar.right_bar = Frame("images/emptyheart.png", 0, 0)
-
-init python:
-    res = False
-
 
 # 여기에서부터 게임이 시작합니다.
 label shoppingmall:
@@ -58,7 +29,7 @@ label shoppingmall:
             show e_sad
             e "계획이 너무 타이트한 것 같은데...ㅠㅠ"
             hide e_sad
-        
+
         "들어가서 예쁜 옷들 보이면 왕창 다 구경하자! 사고 싶은 거 있으면 고민 말고 담기!":
             hide e_norm
             $friendship += 20
@@ -127,7 +98,7 @@ label shoppingmall:
             $friendship += 20
             e "아 정말? 다행이다. 아까 귀찮았을텐데 같이 고민해줘서 고마워..."
             hide e_norm with dissolve
-        
+
         "으이구... 이 화상아. 결국 이거 살 거였으면서 뭘 그렇게 고민을 했어!":
             hide e_norm
             $friendship -= 20
@@ -144,7 +115,7 @@ label shoppingmall:
     hide e_norm with dissolve
 
     scene bg restaurant with fade
-    
+
     show restaurant_menu at truecenter with dissolve
     pause(2.0)
     show e_happy with dissolve
@@ -262,7 +233,7 @@ label shoppingmall:
     p "살 거 다 골랐으면 이제 갈까?"
     e "아, 나 지금 직원 분이랑 얘기하고 있었는데 잠시만..."
 
-    menu: 
+    menu:
         "무슨 얘기를 그렇게 재미있게 하고 있었어~ 그럼 나는 저기서 저거 보면서 기다리고 있을게.":
             hide e_norm
             $friendship += 20

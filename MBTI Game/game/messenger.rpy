@@ -78,8 +78,11 @@ init python:
     class Picture():
         def __init__(self, name, x):
             self.name = str(name)
-            self.x = x # maximum 580
+            self.x = x # maximum 297
+            # self.y = x
             self.y = int(x/display_aspect_ratio)
+            # self.x = int(y/display_aspect_ratio)
+            # self.y = y
         # Open picture to fulll screen
         def open_fullpic(self):
             renpy.show_screen('sc_fullpic', pic=self.name)
@@ -315,8 +318,8 @@ screen messenger():
                         elif message.pic: # Picture
                             hbox spacing 0 xalign message.position:
                                 $ bottom = 35 if message_time else 20
-                                button xalign message.position xmaximum 297 xpadding 0 top_padding 20 bottom_padding bottom background Frame(box, 25, 25) hover_background Frame(box_hover, 25,25) action Function(message.pic.open_fullpic):
-                                    add 'messenger/pic/'+message.pic.name+'.jpg' align .5,.5 size message.pic.x, message.pic.y
+                                button xalign message.position xmaximum 200 xpadding 0 top_padding 20 bottom_padding bottom background Frame(box, 25, 25) hover_background Frame(box_hover, 25,25) action Function(message.pic.open_fullpic):
+                                    add 'messenger/pic/'+message.pic.name+'.png' align .5,.5 size message.pic.x, message.pic.y
                                 if message_time:
                                     text "{t}%s{/t}"%(message.time) style 'txt_time'
                         elif message.choices: # Menu
@@ -376,7 +379,7 @@ screen messenger():
 screen sc_fullpic(pic=False):
     modal True zorder 10
     add '#00000090' at blackout
-    add 'messenger/pic/'+pic+'.jpg' at move_pic
+    add 'messenger/pic/'+pic+'.png' at move_pic
     button background None action Hide('sc_fullpic')
 #################################################################################
 
