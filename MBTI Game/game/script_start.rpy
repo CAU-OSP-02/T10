@@ -29,7 +29,6 @@ define friendship = 0
 label start:
 
     $ is_visited = 0
-
     scene bg space with dissolve
     play music "audio/bgm space.mp3" fadein 1 fadeout 1
     window hide

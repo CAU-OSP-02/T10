@@ -1,6 +1,6 @@
 ﻿#대본
 label PCroom:
-
+  show screen stat_overlay
   scene bg platform with slowfade
   show screen placeUI with dissolve
   play music "audio/bgm chat.mp3" fadein 1 fadeout 1
@@ -17,7 +17,6 @@ label PCroom:
   scene bg pcroom with fade
   play music "audio/bgm pcroom.mp3" fadein 1 fadeout 1 volume 0.7
   
-  show screen stat_overlay
   show e_awk with dissolve
   e "여기 담배 냄새 나니깐 저기 구석으로 가자"
   $friendship += 20
@@ -104,8 +103,6 @@ label PCroom:
   hide e_happy with dissolve
   
   call start_minesweeper
-
-  $friendship = 0
 
   hide screen placeUI with dissolve
 
