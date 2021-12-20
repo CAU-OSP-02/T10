@@ -105,8 +105,12 @@
     pause 1
     hide text
     with dissolve
+
+    show ti with dissolve
     ti "여러분~! 콘서트 때 우리 오빠들을 위한 깜짝 이벤트가 있습니다~ 떼창 꼭 같이 해주시고 지금 나눠드리는 5주년 단콘 축하해 우리 사랑 영원해"
     ti "판플렛 꼭 흔들어주세요! 감사합니다~"
+    hide ti with dissolve
+    show e_norm with dissolve
     e "[player_name], 너 떼창곡 뭔지 알아? 다른 곡들은? 응원법 알려줄까?"
     menu:
         "됐어. 그냥 따라 부르면 되지ㅋㅋ":
