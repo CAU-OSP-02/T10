@@ -8,7 +8,6 @@ label theater:
 
     "우리는 영화를 보러 영화관에 왔다.{p}우리 행성에서도 지구 영화는 꽤 유명해서, 나도 몇 번 본 적이 있다."
 
-    show e_norm with dissolve
     e "무슨 영화 볼래?"
 
     label choice_movie:
@@ -42,19 +41,14 @@ label theater:
                 e "뭐…? 진심이야?"
                 menu:
                     "응. 꼭 보고 싶어.":
-                        hide e_norm
-                        show e_awk
                         "ENFP의 표정이 안 좋은 것 같은데, 어디 아픈가?"
-                        hide e_awk
+                        $friendship -= 20
+
 
                     "농담이야.":
-                        hide e_norm
-                        show e_happy
                         "ENFP의 표정이 갑자기 밝아졌다. 나만 알고 싶은 영화… 뭐 그런 건가?"
-                        hide e_happy
-
-    show e_norm with dissolve
-
+                        $friendship += 20
+        show screen stat_overlay 
     label popcorn:
         show bg box_office:
             linear 1.5 xalign 1.0
@@ -66,22 +60,21 @@ label theater:
             "좋아!":
                 p "넌 무슨 맛 먹을래? 난 카라멜."
                 e "난 어니언! 콜라도 사자."
+                $friendship += 20
 
             "난 괜찮아.":
                 p "난 영화 볼 때 팝콘 잘 안 먹어서. 너 먹고 싶으면 사."
                 e "아… 그래? 그럼 팝콘 사올게. 좀만 기다려!"
-                hide e_norm with dissolve
-
+                $friendship -= 20
                 menu:
                     "따라간다":
-                        show e_happy with dissolve
                         p "그래도 같이 가야지."
                         e "나중에 먹고 싶으면 내 거 좀 먹어도 돼. ㅎㅎ"
-                        hide e_happy
-
+                        $friendship += 20
                     "따라가지 않는다":
                         "팝콘 사 올 때까지 구경이나 해야겠다."
-
+                        $friendship -= 20
+        hide screen stat_overlay
 
     label movie_start:
         scene bg theater with fade
@@ -90,7 +83,7 @@ label theater:
         if flag_movie == "conjuring":
             e "허억!!"
             "갑자기 귀신이 튀어나오는 장면에서 ENFP가 깜짝 놀라며 팝콘을 사방팔방 튀겨댔다.{w} 그 모습을 보며 든 생각은…"
-
+           
             menu:
                 "나도 무섭다. ㅠ":
                     $ flag_feedback = 1
@@ -111,15 +104,15 @@ label theater:
             menu:
                 "난 히어로물 기대했는데…":
                     $  flag_feedback = 1
-                    "빌런이 주인공인 액션 영화를 기대하고 왔는데, 당황스럽다."
+                    "나도 놀랐지만 ENFP의 반응을 보니 왠지 안심이 된다."
 
                 "이런 게 바로 띵작…?":
                     $ flag_feedback = 2
-                    "지구어로 띵작이라는 단어를 배웠는데, 바로 이런 영화를 두고 하는 말이던가?"
+                    "좀 웃겼다…. ㅋ.. ㅋㅋ. 나중에 이걸로 놀려먹어야겠다."
 
                 "내용이 너무 어둡지 않나?":
                     $ flag_feedback = 3
-                    "내용이 너무 어둡고 자극적이다. 지구는 이렇게 위험한 곳이란 말인가?"
+                    "영화는 별로 안 무서운데 ENFP가 더 무섭다…"
 
 
         if flag_movie == "no.7":
@@ -156,7 +149,6 @@ label theater:
 
     label movie_end:
         scene bg box_office with fade
-        show e_norm
 
         # 컨저링
         if flag_movie == "conjuring":
@@ -181,11 +173,8 @@ label theater:
 
             if flag_feedback == 1:
                 p "난 액션 영화인 줄 알고 고른 거라 좀 지루하더라."
-                hide e_norm
-                show e_awk
                 e "나도 처음엔 그런 줄 알았는데, 막상 보니 괜찮던데?"
                 p "그래? 난 사실 무슨 얘기하고 싶은 건지 잘 모르겠어."
-                hide e_awk
 
             if flag_feedback == 2:
                 p "돈이 안 아깝다는 게 바로 이런 거지. 진짜 가취있는 영화였다."
@@ -193,10 +182,7 @@ label theater:
 
             if flag_feedback == 3:
                 p "연기는 좋긴 한데 내용은 좀…. 범죄 미화하는 것 같기도 하고."
-                hide e_norm
-                show e_sad
                 e "음… 그렇게 볼 영화는 아니지 않아?"
-                hide e_sad
 
 
         # 7번방의 선물
@@ -210,10 +196,7 @@ label theater:
 
             if flag_feedback == 2:
                 p "좀 억지스러워서 몰입이 잘 안 됐어."
-                hide e_norm
-                show e_sad
                 e "아 진짜? 배우들 너무 잘하던데.. 난 슬펐어. ㅠㅠ"
-                hide e_sad
 
 
         # 자전차왕 엄복동
@@ -227,16 +210,12 @@ label theater:
 
             if flag_feedback == 2:
                 p "재밌었어!!"
-                hide e_norm
-                show e_awk
                 e "뭐…?"
-                hide e_awk
 
             if flag_feedback == 3:
                 p "아~ 팝콘 맛있었다."
                 e "어? 어. 근데 이 영화 왜 보자고 해ㅆ..."
                 p "팝콘은 역시 카라멜이지!"
-
 
     hide screen placeUI with dissolve
 
