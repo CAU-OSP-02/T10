@@ -69,5 +69,5 @@ label ending:
         with dissolve
         "{i}당신은 ENFP와 둘도 없는 친구가 되었습니다. 축하합니다, 외계인!{/i}"
 
-
+    $friendship = 0
     return
