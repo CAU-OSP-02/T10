@@ -1,17 +1,17 @@
-Thu Dec 16 08:38:43 2021
+Mon Dec 20 13:30:30 2021
 Windows-10-10.0.19041
-Ren'Py 7.4.10.2178
+Ren'Py 7.4.11.2266
  
 
-Bootstrap to the start of init.init took 0.06s
+Bootstrap to the start of init.init took 0.07s
 Early init took 0.00s
-Loader init took 0.03s
-Loading error handling took 0.01s
-Loading script took 0.19s
+Loader init took 0.05s
+Loading error handling took 0.02s
+Loading script took 0.32s
 Loading save slot metadata. took 0.01s
 Loading persistent took 0.00s
 Importing _renpysteam: ImportError('No module named _renpysteam',)
-Running init code took 0.06s
+Running init code took 0.15s
 Loading analysis data took 0.02s
 Analyze and compile ATL took 0.00s
 Index archives took 0.00s
@@ -25,12 +25,12 @@ nvdrs: Loaded, about to disable thread optimizations.
 nvdrs: Disabled thread optimizations.
 Creating interface object took 0.23s
 Cleaning stores took 0.00s
-Init translation took 0.03s
+Init translation took 0.04s
 Build styles took 0.00s
 Load screen analysis took 0.00s
-Analyze screens took 0.01s
-Save screen analysis took 0.02s
-Prepare screens took 0.05s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
+Prepare screens took 0.06s
 Save pyanalysis. took 0.00s
 Save bytecode. took 0.02s
 Running _start took 0.00s
@@ -45,35 +45,5 @@ Vendor: 'NVIDIA Corporation'
 Renderer: 'GeForce MX250/PCIe/SSE2'
 Version: '4.6.0 NVIDIA 457.30'
 Display Info: None
-Screen sizes: virtual=(1280, 720) physical=(1600, 900) drawable=(1600, 900)
+Screen sizes: virtual=(1280, 720) physical=(1525, 858) drawable=(1525, 858)
 Maximum texture size: 4096x4096
-
-Full traceback:
-  File "game/script_minimap.rpy", line 8, in script call
-    call shoppingmall
-  File "game/script_shoppingmall.rpy", line 237, in script
-    e "우리 내일 또 놀자! 내일도 놀고 내일 모레도 놀고, [player_name](이)랑 맨날 같이 놀고 싶네!"
-  File "renpy/ast.py", line 721, in execute
-    renpy.exports.say(who, what, *args, **kwargs)
-  File "renpy/exports.py", line 1417, in say
-    who(what, *args, **kwargs)
-  File "renpy/character.py", line 1236, in __call__
-    what = self.prefix_suffix("what", self.what_prefix, what, self.what_suffix)
-  File "renpy/character.py", line 1155, in prefix_suffix
-    return (sub(prefix) + sub(body) + sub(suffix))
-  File "renpy/character.py", line 1135, in sub
-    return renpy.substitutions.substitute(s, scope=scope, force=force, translate=translate)[0]
-  File "renpy/substitutions.py", line 270, in substitute
-    s = formatter.vformat(s, (), kwargs)
-  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python2.7/string.py", line 563, in vformat
-  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python2.7/string.py", line 585, in _vformat
-  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python2.7/string.py", line 646, in get_field
-  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python2.7/string.py", line 605, in get_value
-KeyError: u'player_name'
-
-While running game code:
-  File "game/script_minimap.rpy", line 8, in script call
-    call shoppingmall
-  File "game/script_shoppingmall.rpy", line 237, in script
-    e "우리 내일 또 놀자! 내일도 놀고 내일 모레도 놀고, [player_name](이)랑 맨날 같이 놀고 싶네!"
-KeyError: u'player_name'

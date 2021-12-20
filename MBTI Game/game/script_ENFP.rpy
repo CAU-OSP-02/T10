@@ -90,4 +90,4 @@ label arrive:
     $ hide_messenger()
     window hide
 
-    # jump map                                                                  # 맵으로 이동                                                   
+    jump minimap                                                                  # 맵으로 이동                                                   

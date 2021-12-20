@@ -1,4 +1,4 @@
-﻿# 이 파일에 게임 스크립트를 입력합니다.
+# 이 파일에 게임 스크립트를 입력합니다.
 
 # image 문을 사용해 이미지를 정의합니다.
 image bg mbti = "#F6F6F6"                                                       # 임시 색상
@@ -7,7 +7,6 @@ image bg ending = "#F6F6F6"                                                     
 # 게임에서 사용할 캐릭터를 정의합니다.
 define nv = nvl_narrator
 define p = DynamicCharacter("player_name")
-
 define e = Character("ENFP", color="#FFCCCC")
 
 init:
@@ -16,6 +15,7 @@ init:
 # 기타 정의
 define flashbulb = Fade(0.2, 0.0, 0.8, color='#fff')
 define slowfade = Fade(.5,.2,.5)
+define friendship = 0
 
 # 여기에서부터 게임이 시작합니다.
 label start:
@@ -28,7 +28,8 @@ label start:
 
     nv """
     내가 사는 별은 OSP-2021이라 불리는, 몹시 아름다운 곳이다.
-    {p}우리에게는 기잇 허브라고 하는 워프 기술이 있어, 누구나 쉽게 우주 여행을 갈 수 있다.
+    {p}우리에게는 기잇 허브라고 하는 워프 기술이 있어, 
+    \n누구나 쉽게 우주 여행을 갈 수 있다.
     \n요즘 가장 인기있는 여행지는 지구라는 외계 행성인데,
     지구인 친구를 사귀고 그걸 SNS에 인증하는 게 유행인 것 같다.
     \n부럽다... 나도 외계인 친구가 생기면 좋겠는데...
@@ -52,7 +53,8 @@ label start:
     scene bg cafe with slowfade
     play music "audio/bgm cafe.mp3" fadein 1 fadeout 1
 
-    "지구에 와서 가장 처음 온 곳은 '카페'.\n지구인들의 일상에 녹아들기 위해서는 필수 코스라고 들었다.{p}음료 하나를 시켜서 앉은 나는 이제부터 '지구인 친구 사귀기' 플랜을 짜려고 한다.."
+    "지구에 와서 가장 처음 온 곳은 '카페'.\n지구인들의 일상에 녹아들기 위해서는 필수 코스라고 들었다."
+    "음료 하나를 시켜서 앉은 나는 이제부터 '지구인 친구 사귀기' 플랜을 짜려고 한다.."
 
     "손님1" "야, 너 MBTI 뭐야?"
     "손님2" "나? 나 ISTJ."

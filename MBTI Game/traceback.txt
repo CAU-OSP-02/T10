@@ -3,36 +3,32 @@
 While running game code:
   File "game/script_minimap.rpy", line 8, in script call
     call shoppingmall
-  File "game/script_shoppingmall.rpy", line 237, in script
-    e "우리 내일 또 놀자! 내일도 놀고 내일 모레도 놀고, [player_name](이)랑 맨날 같이 놀고 싶네!"
-KeyError: u'player_name'
+  File "game/script_shoppingmall.rpy", line 64, in script
+    scene bg shoppingmall_1 a with fade
+Exception: Image 'bg shoppingmall_1' does not accept attributes 'a'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
   File "game/script_minimap.rpy", line 8, in script call
     call shoppingmall
-  File "game/script_shoppingmall.rpy", line 237, in script
-    e "우리 내일 또 놀자! 내일도 놀고 내일 모레도 놀고, [player_name](이)랑 맨날 같이 놀고 싶네!"
-  File "renpy/ast.py", line 721, in execute
-    renpy.exports.say(who, what, *args, **kwargs)
-  File "renpy/exports.py", line 1417, in say
-    who(what, *args, **kwargs)
-  File "renpy/character.py", line 1236, in __call__
-    what = self.prefix_suffix("what", self.what_prefix, what, self.what_suffix)
-  File "renpy/character.py", line 1155, in prefix_suffix
-    return (sub(prefix) + sub(body) + sub(suffix))
-  File "renpy/character.py", line 1135, in sub
-    return renpy.substitutions.substitute(s, scope=scope, force=force, translate=translate)[0]
-  File "renpy/substitutions.py", line 270, in substitute
-    s = formatter.vformat(s, (), kwargs)
-  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python2.7/string.py", line 563, in vformat
-  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python2.7/string.py", line 585, in _vformat
-  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python2.7/string.py", line 646, in get_field
-  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python2.7/string.py", line 605, in get_value
-KeyError: u'player_name'
+  File "game/script_shoppingmall.rpy", line 64, in script
+    scene bg shoppingmall_1 a with fade
+  File "renpy/ast.py", line 1328, in execute
+    show_imspec(self.imspec, atl=getattr(self, "atl", None))
+  File "renpy/ast.py", line 1167, in show_imspec
+    atl=atl)
+  File "renpy/exports.py", line 742, in show
+    if not base.find_target() and renpy.config.missing_show:
+  File "renpy/display/image.py", line 409, in find_target
+    self.target = target._duplicate(a)
+  File "renpy/display/core.py", line 390, in _duplicate
+    args.extraneous()
+  File "renpy/display/core.py", line 271, in extraneous
+    " ".join(self.args),
+Exception: Image 'bg shoppingmall_1' does not accept attributes 'a'.
 
 Windows-10-10.0.19041
-Ren'Py 7.4.10.2178
+Ren'Py 7.4.11.2266
 MBTI 프로젝트 
-Thu Dec 16 08:41:01 2021
+Mon Dec 20 13:25:00 2021

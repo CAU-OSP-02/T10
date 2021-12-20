@@ -43,7 +43,6 @@ label theater:
 
                     "농담이야.":
                         "ENFP의 표정이 갑자기 밝아졌다. 나만 알고 싶은 영화… 뭐 그런 건가?"
-                        jump select_movie
 
 
     label popcorn:
@@ -218,4 +217,4 @@ label theater:
     if is_visited == 4:                                                         # 4곳 모두 방문 시 엔딩으로, 아니면 맵으로 돌아감
         jump ending
     else:
-        jump map
+        jump minimap

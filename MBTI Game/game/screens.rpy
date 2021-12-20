@@ -1345,7 +1345,7 @@ style nvl_dialogue:
 style nvl_thought:
     xpos gui.nvl_thought_xpos
     xanchor gui.nvl_thought_xalign
-    yalign gui.nvl_thought_yalign
+    #yalign gui.nvl_thought_yalign
     xsize gui.nvl_thought_width
     min_width gui.nvl_thought_width
     text_align gui.nvl_thought_xalign
