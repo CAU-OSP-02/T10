@@ -42,6 +42,7 @@ init python:
 # 여기에서부터 게임이 시작합니다.
 label shoppingmall:
 
+    show screen stat_overlay
     scene bg platform with slowfade
     show screen placeUI with dissolve
     play music "audio/bgm chat.mp3" fadein 1 fadeout 1
@@ -53,12 +54,14 @@ label shoppingmall:
     menu:
         "일단 가게는 여기랑 여기 먼저 들러야 할 것 같아. 여기 옷들이 네 스타일이거든! \n그리고 점심은 1시쯤에 먹고 잠깐 쉬다가 그 주변에 있는 이 가게 가보자. \n동선은 이렇게 정하면 딱 맞을 것 같은데?":
             hide e_norm
+            $friendship -= 20
             show e_sad
             e "계획이 너무 타이트한 것 같은데...ㅠㅠ"
             hide e_sad
         
         "들어가서 예쁜 옷들 보이면 왕창 다 구경하자! 사고 싶은 거 있으면 고민 말고 담기!":
             hide e_norm
+            $friendship += 20
             show e_happy
             e "응! 진짜 재밌겠다... 신난다~"
             hide e_happy
@@ -81,12 +84,14 @@ label shoppingmall:
 
         "난 두 번째 거가 더 나은 것 같은데? 이거 사!":
             hide e_norm
+            $friendship += 0
             show e_sad
             e "근데 첫 번째 거가 더 예쁘단 말이지... ㅠㅠ"
             p "그래서 뭐 살지 골랐어?"
 
         "내가 말해줘도 어차피 너 원하는 거 살 거잖아. 맘대로 해~":
             hide e_norm
+            $friendship -= 20
             show e_awk
             e "에이, 넌 뭐 말을 그렇게 하냐! 그래도 봐주면 좀 덧나냐..."
             p "그래서 뭐 살지 골랐어?"
@@ -119,11 +124,13 @@ label shoppingmall:
     show e_norm with dissolve
     menu:
         "결국에는 이거 샀구나! 잘했어. 잘 어울린다!":
+            $friendship += 20
             e "아 정말? 다행이다. 아까 귀찮았을텐데 같이 고민해줘서 고마워..."
             hide e_norm with dissolve
         
         "으이구... 이 화상아. 결국 이거 살 거였으면서 뭘 그렇게 고민을 했어!":
             hide e_norm
+            $friendship -= 20
             show e_sad
             e "그래도 고민이 되는 걸 어떡해..."
             hide e_sad with dissolve
@@ -157,12 +164,14 @@ label shoppingmall:
             e "[player_name], 뭘 그리 고민해... 나 배고파, 빨리 시키자."
             p "아니, 어떤 걸 먹는 게 제일 이득일지 생각 중이야..."
             hide e_sad
+            $friendship -= 20
             show e_awk
             e "어? 음식 먹을 때도 이득을 따져...? 맛있으면 된 거지..."
             hide e_awk
             show e_norm
 
         "난 이거 먹을래! 이게 제일 땡긴다 지금.":
+            $friendship += 0
             e "그래. 나도 쪼금 나눠줄 거지? 내 것도 너 좀 줄게."
 
     e "근데 나 진짜 어릴 적부터 궁금했던 건데..."
@@ -172,6 +181,7 @@ label shoppingmall:
     menu:
         "글쎄... 별로 생각해본 적 없는데.":
             hide e_norm
+            $friendship -= 20
             show e_sad
             e "아, 그렇구나... 그냥 항상 궁금했었어!"
             p "그럴 수 있지."
@@ -179,6 +189,7 @@ label shoppingmall:
 
         "만약 외계인이 진짜로 존재한다면 나는 우주 여행하면서 그들과 교류해보고 싶어! 진짜 신기하겠다.":
             hide e_norm
+            $friendship += 20
             show e_happy
             e "그럼 나는 너 옆에 따라가서 외계인 친구 만들어야지!"
             p "헉, 너무 좋은데?"
@@ -196,18 +207,21 @@ label shoppingmall:
     menu:
         "아 진짜? 뭐 사고 싶었는데?? 나도 요즘 그쪽에 관심 엄청 많거든!!":
             hide e_norm
+            $friendship += 20
             show e_happy
             e "나 오르골 진짜 사고 싶었어... 요즘 유튜브로 계속 오르골 자장가 틀어놓고 잤거든."
             p "아 진짜~? 오르골 한 번도 사본 적 없는데, 궁금하다. 가보자 가보자!"
             hide e_happy with dissolve
 
         "인테리어 소품? 사서 뭐하게? 요즘 방 꾸미는 게 취미야?":
+            $friendship += 0
             e "그건 아니고, 요즘 유튜브로 맨날 오르골 자장가 틀어놓고 잤거든. 실제로 사면 더 좋을 것 같아서."
             p "아 그렇구나. 그럼 가보자."
             hide e_norm with dissolve
 
         "인테리어 소품 사도 어차피 쓰지도 않을 거잖아~ 돈 아깝지 않아?":
             hide e_norm
+            $friendship -= 20
             show e_sad
             e "그래도 예쁘잖아... 전시해놓고 두고두고 보면 좋을 것 같은데... ㅠㅠ"
             p "그래, 가보자."
@@ -235,12 +249,14 @@ label shoppingmall:
     menu:
         "원래 하나만 사려던 거 아니었어? 충동적으로 사서 돈 너무 많이 쓰지 말고 하나만 사자.":
             hide e_norm
+            $friendship -= 20
             show e_sad
             e "그래도 저거랑 세트여서 사고 싶은데...ㅠㅠ"
             hide e_sad
             show e_norm
 
         "원래 하나만 사려던 거 아니었어? 이것도 마음에 들었나보네?":
+            $friendship += 0
             e "응. 마음 같아서는 이거저거 다 사고 싶은데 나도 내 딴에는 참는 거야."
 
     p "살 거 다 골랐으면 이제 갈까?"
@@ -249,25 +265,19 @@ label shoppingmall:
     menu: 
         "무슨 얘기를 그렇게 재미있게 하고 있었어~ 그럼 나는 저기서 저거 보면서 기다리고 있을게.":
             hide e_norm
+            $friendship += 20
             show e_happy
             e "응! 기다려줘서 고마워!"
             hide e_happy with dissolve
 
         "직원 분이랑 할 얘기가 뭐 그리 많아~ 우리 얼른 가자. 나 조금 피곤해...":
             hide e_norm
+            $friendship -= 20
             show e_sad
             e "아 그래..? 알겠어... 가자!"
             hide e_sad with dissolve
 
-    scene bg platform with slowfade
-    play music "audio/bgm chat.mp3" fadein 1 fadeout 1
-
-    show e_norm with dissolve
-    e "우리 이제 빠빠이 해야겠네!"
-    p "그러네. 오늘 재밌었다~"
-    e "우리 내일 또 놀자! 내일도 놀고 내일 모레도 놀고, [player_name](이)랑 맨날 같이 놀고 싶네!"
-    p "ㅋㅋㅋ 그래 그래."
-
+    hide screen stat_overlay
     hide screen placeUI with dissolve
 
     $ is_visited += 1                                                           # 장소마다 스크립트 마지막에 추가
