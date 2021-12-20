@@ -5,41 +5,41 @@ label PCroom:
   show screen placeUI with dissolve
   play music "audio/bgm chat.mp3" fadein 1 fadeout 1
   
-  show ENFP_normal with dissolve
+  show e_norm with dissolve
   e "심심한데 피시방 가자!"
   p "피시방??"
   p "피시방이 뭐야?"
   e "엥 피시방을 모른다고!??"
   e "신기하네..음 돈내고 컴퓨터 사용하는 곳이야"
   p "아하 그래 가자 재밌겠다"
-  hide ENFP_normal with dissolve
+  hide e_norm with dissolve
   
   scene bg pcroom with fade
   play music "audio/bgm pcroom.mp3" fadein 1 fadeout 1 volume 0.7
   
   show screen stat_overlay
-  show ENFP_awkward with dissolve
+  show e_awk with dissolve
   e "여기 담배 냄새 나니깐 저기 구석으로 가자"
   $friendship += 20
-  hide ENFP_awkward with dissolve
-  show ENFP_normal with dissolve
+  hide e_awk with dissolve
+  show e_norm
   p "그래"
   e "우리 게임하자"
   e "무슨 게임하지...?"
   p "둘이 같이 할 수 있는거 하자"
   e "그럼 둘이 할 수 있는 피파하자"
   p "좋아"
-  hide ENFP_normal with dissolve
+  hide e_norm with dissolve
 
-  show ENFP_sad with dissolve
+  show e_sad with fade
   e "아...이걸 지네"
   p "너무 쉽다 잘 좀 해봐"
   e "내가 실수 한거야!"
   e "다시 해 이길 수 있어"
   p "그래그래 내가 특별히 다시 해줄게^^"
-  hide ENFP_sad with dissolve
+  hide e_sad with dissolve
 
-  show ENFP_happy with fade
+  show e_happy with fade
   e "거봐 다시하면 이긴다고 했지 ㅋㅋ"
   menu: 
       "오 잘하네":
@@ -48,45 +48,45 @@ label PCroom:
         $friendship += 20
       "노잼":
         $friendship -= 20
-  hide ENFP_happy with dissolve
+  hide e_happy with dissolve
 
-  show ENFP_normal with fade
+  show e_norm with fade
   e "흐아~ 이제 슬슬 배고프다"
   p "나도"
   e "그럼 우리 뭐 시켜먹자!"
   p "그래"
   p "응? 여기서 먹자고?"
-  hide ENFP_normal with fade
+  hide e_norm
   menu:
       "응 식당보다 맛있진 않지만 귀찮으니간 여기서 먹자":
-      show ENFP_sad with fade
+        show e_sad
         e "맛있는 거 먹고 싶긴한데..."
         $friendship -= 20
-      hide ENFP_sad with dissolve
+        hide e_sad
       "피시방 밥 비싼데 밖에 나가서 맛있는 식당 찾아보자":
-      show ENFP_happy with fade
+        show e_happy
         e "좋다"
         $friendship += 20
-      hide ENFP_happy with fade
- 
-  show ENFP_normal with fade    
+        hide e_happy
+
+  show e_norm   
   e "밥 먹기 전에 내기하자"
   p "무슨 내기?"
   e "밥값 내기 어때?"
-  hide ENFP_normal with fade
+  hide e_norm
   menu:
       "좋다, 재밌겠다":
-      show ENFP_happy with fade
+        show e_happy
         e "무슨 게임으로 내기할까?"
         $friendship += 20
-      hide ENFP_happy with fade
+        hide e_happy
       "싫어..":
-      show ENFP_awkward with dissolve
+        show e_awk
         e "오키..그럼 나가기 전에 게임 하나 하고 가자"
         $friendship -= 20
-      hide ENFP_awkward with dissolve
+        hide e_awkward
 
-  show ENFP_normal with fade
+  show e_normal
   e "지뢰찾기 게임 어때?"
   p "지뢰찾기 게임이 뭐지??"
   p "어떻게 하는지 알려줘"
@@ -95,13 +95,13 @@ label PCroom:
   p "그럼 처음 해도 내가 이기겠는데??ㅋㅋㅋㅋㅋ"
   e "무슨 소리야 당연히 내가 이기지 ㅋㅋㅋㅋㅋ"
   p "그럼 한번 해보자"
-  hide ENFP_normal with dissolve
+  hide e_norm with dissolve
 
   hide screen stat_overlay
   
-  show ENFP_happy with dissolve
+  show e_happy with dissolve
   e "그럼 지뢰찾기 게임 시작한다. 마우스 오른쪽 버튼은 깃발 표시하는거야. 잘해봐^^"
-  hide ENFP_happy with dissolve
+  hide e_happy with dissolve
   
   call start_minesweeper
 
