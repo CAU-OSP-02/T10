@@ -299,7 +299,7 @@ screen navigation():
             xalign 0.5
             yalign 0.6
 
-            spacing 50
+            spacing 30
 
             textbutton _("시작하기") action Start()
 
@@ -352,6 +352,7 @@ style navigation_button:
 
 style navigation_button_text:
     properties gui.button_text_properties("navigation_button")
+    xalign 0.5
 
 
 ## Main Menu 스크린 ###############################################################

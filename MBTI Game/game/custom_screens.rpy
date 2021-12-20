@@ -85,7 +85,7 @@ screen choice_mbti():
         spacing 25
 
         text "원하는 MBTI 유형을 선택하세요.":
-            size 25
+            size 30
             color "#000000"
             xalign 0.5
 
@@ -99,8 +99,8 @@ screen choice_mbti():
 
                     textbutton "[i]":
                         text_size 25
-                        xalign .5
-                        yalign .5
+                        xalign 0.5
+                        yalign 0.5
                         if i == "ENFP":
                             action Jump(i)
                         else:

@@ -34,7 +34,7 @@ define gui.idle_color = u'#888888'
 define gui.idle_small_color = u'#aaaaaa'
 
 ## 버튼(button)과 막대(bar)에 커서를 올렸을 때(hovered) 사용됩니다.
-define gui.hover_color = u'#c1e0ff'
+define gui.hover_color = u'#ff7f7f'
 
 ## 텍스트 버튼(text button)에 선택됐지만(selected) 포커스되지(focused) 않았을 때
 ## 사용됩니다. 버튼(button)은 현재 화면이거나 설정값인 경우 선택됨(selected)이
