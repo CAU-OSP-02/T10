@@ -102,7 +102,7 @@ label PCroom:
   e "그럼 지뢰찾기 게임 시작한다. 마우스 오른쪽 버튼은 깃발 표시하는거야. 잘해봐^^"
   hide e_happy with dissolve
   
-  call start_minesweeper
+  call start_minesweeper from _call_start_minesweeper
 
   hide screen placeUI with dissolve
 

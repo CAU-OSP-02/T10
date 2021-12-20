@@ -3,13 +3,13 @@ label minimap:
     call screen MapUI
 
 label shoppingmall_pressed:
-    call shoppingmall
+    call shoppingmall from _call_shoppingmall
 
 label theater_pressed:
-    call theater
+    call theater from _call_theater
 
 label PCroom_pressed:
-    call PCroom 
+    call PCroom from _call_PCroom 
 
 label concert_pressed:
-    call concert
+    call concert from _call_concert
