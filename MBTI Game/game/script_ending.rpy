@@ -13,8 +13,6 @@ label ending:
     e "엉야! 너도 조심히 들어가~ 빠이!"
     hide e_norm with dissolve
 
-
-
     hide screen placeUI with dissolve
 
     scene bg subway with Dissolve(1.0)
@@ -50,26 +48,26 @@ label ending:
     if friendship < 20:
         scene bg ending_sad with flashbulb
         show e_sad
-        
+
         with dissolve
-        
+
         "{i}당신은 ENFP와 정말 안 맞는 것 같군요. 하지만 노력은 해봐야 하지 않겠어요? 힘내요, 외계인!{/i}"
 
     if 20 <= friendship < 80:
         scene bg ending_normal with flashbulb
         show e_norm
-        
+
         with dissolve
-        
+
         "{i}당신은 ENFP와 친하다고도, 안 친하다고도 할 수 없는... 그런 친구가 되었습니다.\n어쩔 수 없죠, 뭐. 분발하자고요, 외계인!{/i}"
 
     if 80 <= friendship:
         scene bg ending_happy with flashbulb
         show e_happy
-        
+
         with dissolve
-        
+
         "{i}당신은 ENFP와 둘도 없는 친구가 되었습니다. 축하합니다, 외계인!{/i}"
 
-    
+
     return
