@@ -160,7 +160,7 @@ style say_dialogue:
     xpos gui.dialogue_xpos
     xsize gui.dialogue_width
     ypos gui.dialogue_ypos
-    line_spacing gui.dialogue_text_line_spacing
+    # line_spacing gui.dialogue_text_line_spacing
 
 
 ## Input 스크린 ###################################################################
@@ -299,7 +299,7 @@ screen navigation():
             xalign 0.5
             yalign 0.6
 
-            spacing 30
+            spacing 50
 
             textbutton _("시작하기") action Start()
 
@@ -352,7 +352,6 @@ style navigation_button:
 
 style navigation_button_text:
     properties gui.button_text_properties("navigation_button")
-    xalign 0.5
 
 
 ## Main Menu 스크린 ###############################################################
@@ -1346,7 +1345,7 @@ style nvl_dialogue:
 style nvl_thought:
     xpos gui.nvl_thought_xpos
     xanchor gui.nvl_thought_xalign
-    #yalign gui.nvl_thought_yalign
+    yalign gui.nvl_thought_yalign
     xsize gui.nvl_thought_width
     min_width gui.nvl_thought_width
     text_align gui.nvl_thought_xalign

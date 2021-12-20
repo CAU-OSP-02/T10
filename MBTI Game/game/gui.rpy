@@ -34,7 +34,7 @@ define gui.idle_color = u'#888888'
 define gui.idle_small_color = u'#aaaaaa'
 
 ## 버튼(button)과 막대(bar)에 커서를 올렸을 때(hovered) 사용됩니다.
-define gui.hover_color = u'#ff7f7f'
+define gui.hover_color = u'#c1e0ff'
 
 ## 텍스트 버튼(text button)에 선택됐지만(selected) 포커스되지(focused) 않았을 때
 ## 사용됩니다. 버튼(button)은 현재 화면이거나 설정값인 경우 선택됨(selected)이
@@ -87,7 +87,7 @@ define gui.title_text_size = 50
 ## 메인과 게임 메뉴들 ##################################################################
 
 ## 이미지들은 메인(main)과 게임 메뉴(game menu)에 사용됩니다.
-define gui.main_menu_background = "#ffffff"
+define gui.main_menu_background = "gui/main_menu.png"
 define gui.game_menu_background = "gui/game_menu.png"
 
 
@@ -129,7 +129,7 @@ define gui.namebox_tile = False
 ## 텍스트박스에서 대사의 위치입니다. These can be a whole number of pixels
 ## relative to the left or top side of the textbox, or 0.5 to center.
 define gui.dialogue_xpos = 268
-define gui.dialogue_ypos = 70
+define gui.dialogue_ypos = 60
 
 ## 픽셀값에서 대사의 최대 너비입니다.
 define gui.dialogue_width = 744
@@ -139,7 +139,7 @@ define gui.dialogue_width = 744
 define gui.dialogue_text_xalign = 0.0
 
 ## 대사 줄 간격입니다.
-define gui.dialogue_text_line_spacing = 10
+# define gui.dialogue_text_line_spacing = 0
 
 
 ## 버튼들 #########################################################################
@@ -389,10 +389,10 @@ define gui.nvl_text_xalign = 0.0
 ## nvl_thought 글자의 위치, 너비, 정렬(nvl_narrator 캐릭터에 의해 표시되는 글자)
 ## 입니다.
 define gui.nvl_thought_xpos = 260
-define gui.nvl_thought_ypos = .5
+define gui.nvl_thought_yalign = .5
 define gui.nvl_thought_width = 780
 define gui.nvl_thought_xalign = 0.0
-define gui.nvl_thought_line_spacing = 10
+define gui.nvl_thought_line_spacing = 0
 
 ## NVL 메뉴 버튼의 위치입니다.
 define gui.nvl_button_xpos = 450
