@@ -64,7 +64,7 @@ init python:
                 temp = oN[i]
                 oN[i] = ""
                 oLen += 1
-                renpy.play("sounds/click.mp3", channel="sound")
+                renpy.play("audio/click.mp3", channel="sound")
                 renpy.restart_interaction()
                 if needTimer:
                     if oLen >= maxLen:
