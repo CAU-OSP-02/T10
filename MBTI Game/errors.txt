@@ -2,21 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script_minimap.rpy", line 6: end of line expected.
-    call shoppingmall with fade
-                      ^
-
-File "game/script_minimap.rpy", line 9: end of line expected.
-    call theater with fade
-                 ^
-
-File "game/script_minimap.rpy", line 12: end of line expected.
-    call PCroom with fade
-                ^
-
-File "game/script_minimap.rpy", line 15: end of line expected.
-    call concert with fade
-                 ^
+File "game/custom_screens.rpy", line 26: u'show' is not a keyword argument or valid child for the screen statement.
+    show screen endingUI
+        ^
 
 Ren'Py Version: Ren'Py 7.4.11.2266
-Mon Dec 20 15:09:39 2021
+Mon Dec 20 18:54:18 2021

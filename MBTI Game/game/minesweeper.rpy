@@ -30,7 +30,6 @@ label lost_minesweeper:
             jump start_minesweeper
 
         "게임 끝내기":
-            "End game"
             return     
             
 

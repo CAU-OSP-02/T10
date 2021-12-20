@@ -8,11 +8,20 @@ screen placeUI:
         auto "UI/minimap_%s.png"
         action ShowMenu("MapUI")
 
+
 ## 미니맵 스크린 ################################################################
 
 screen MapUI():
     tag statusUI
     add "map/bg map.png"
+
+    imagebutton:
+        xalign 0.0
+        yalign 0.0
+        xoffset 30
+        yoffset 30
+        auto "UI/ending_%s.png"
+        action Jump("ending")
 
     imagebutton:
         xpos 388

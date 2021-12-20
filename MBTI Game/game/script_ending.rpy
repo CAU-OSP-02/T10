@@ -1,10 +1,10 @@
-image txt_score = Text("당신의 점수는 [friendship]점입니다.", size=30, xalign=.5, yalign=.65, color="#ffffff")
+image txt_score = Text("당신의 점수는 {size=+20}{i}[friendship]점{/i}{/size}입니다.", size=40, xalign=.5, yalign=0.03, color="#009cff")
 
 label ending:
     show screen stat_overlay
     scene bg platform with slowfade
     play music "audio/bgm chat.mp3" fadein 1 fadeout 1
-    show e with dissolve
+    show e_norm with dissolve
     e "이야 벌써 헤어질 시간이네?"
     hide screen stat_overlay
     p "벌써? 난 하루가 꽤 길었는데;;"
@@ -12,7 +12,7 @@ label ending:
     e "참 보람찬 하루였다!"
     p "ㅋㅋㅋㅋ 그려 조심히 들어가고!"
     e "엉야! 너도 조심히 들어가~ 빠이!"
-    hide e with dissolve
+    hide e_norm with dissolve
 
     # $ friendship = 0
 
@@ -48,17 +48,25 @@ label ending:
         $ hide_messenger()
         "며칠을 기다려봤지만 답장이 없다..."
 
-    scene bg ending with flashbulb
-    show enfp_
-    show txt_score
-
     if friendship < 20:
+        scene bg ending_sad with flashbulb
+        show e_sad
+        show txt_score
+        with dissolve
         "{i}당신은 ENFP와 정말 안 맞는 것 같군요. 하지만 노력은 해봐야 하지 않겠어요? 힘내요, 외계인!{/i}"
 
     if 20 <= friendship < 80:
+        scene bg ending_normal with flashbulb
+        show e_norm
+        show txt_score
+        with dissolve
         "{i}당신은 ENFP와 친하다고도, 안 친하다고도 할 수 없는... 그런 친구가 되었습니다.\n어쩔 수 없죠, 뭐. 분발하자고요, 외계인!{/i}"
 
     if 80 <= friendship:
+        scene bg ending_happy with flashbulb
+        show e_happy
+        show txt_score
+        with dissolve
         "{i}당신은 ENFP와 둘도 없는 친구가 되었습니다. 축하합니다, 외계인!{/i}"
 
 
