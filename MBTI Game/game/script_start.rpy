@@ -1,7 +1,11 @@
 # 이 파일에 게임 스크립트를 입력합니다.
 
 # image 문을 사용해 이미지를 정의합니다.
-# image bg ending = "#F6F6F6"                                                     # 임시 색상
+image e_norm = "ENFP_normal.png"
+image e_happy = "ENFP_happy.png"
+image e_sad = "ENFP_sad.png"
+image e_awk = "ENFP_awkward.png"
+image bg ending = "#F6F6F6"                                                     # 임시 색상
 
 # 게임에서 사용할 캐릭터를 정의합니다.
 define nv = nvl_narrator

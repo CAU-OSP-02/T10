@@ -1,7 +1,4 @@
-﻿#이미지
-image e = im.FactorScale("e.png", 1)
-
-#대본
+﻿#대본
 label PCroom:
 
   scene bg platform with slowfade
