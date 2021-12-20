@@ -5,6 +5,9 @@ image e_norm = "ENFP_normal.png"
 image e_happy = "ENFP_happy.png"
 image e_sad = "ENFP_sad.png"
 image e_awk = "ENFP_awkward.png"
+image ti = "TI_Fan.png"
+image so = "Shop_Owner.png"
+image sm = "Shop_Manager.png"
 
 # 게임에서 사용할 캐릭터를 정의합니다.
 define nv = nvl_narrator

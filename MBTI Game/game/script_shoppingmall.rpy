@@ -225,7 +225,7 @@ label shoppingmall:
     e "진짜요? 거기서 캐릭터 누구 제일 좋아하세요?"
     sm "저는 그 중에,"
     hide e_norm
-    hide sm_norm
+    hide sm
     with dissolve
 
     show e_norm with dissolve
