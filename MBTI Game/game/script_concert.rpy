@@ -2,7 +2,7 @@
     scene bg concert with slowfade
     show screen placeUI with dissolve
     play music "audio/bgm chat.mp3" fadein 1 fadeout 1
-
+    show screen stat_overlay
     show e_happy with dissolve
     e "어! MB경기장??? 오늘 밤에 있는 TI콘서트 말하는거지? 대박 너 티켓팅 성공했어?"
     e "사실 내가 TI 완전 팬인데 이번에 티켓팅 실패해서 못 가게 됐거든ㅠㅠ"
@@ -13,9 +13,9 @@
     e "와 진짜 친구야ㅠㅠ 사랑한다 너 아니면 어쩔뻔했냐ㅠㅠ 티켓값 지금 보내줄게!"
     hide e_happy
     $friendship += 20
-    show screen stat_overlay
+    
     p "굿굿"
-    hide screen stat_overlay
+    
     p "{i}근데 TI는 무슨 아이돌인지 잘 모르겠다 ENFP에게 물어보자{/i}"
 
     menu:
@@ -34,10 +34,10 @@
             e "총 16명인데 다들 개성이 다 달라! 이번에 하는게 5주년 콘서튼데 진짜 시간 빨리간다. "
             e " 이 그룹에 나랑 같은 이름인 애도 있음! "
             hide e_happy
-    show screen stat_overlay
+    
 
     p "아 그래? 이름이 ENFP인 아이돌도 있구나~"
-    hide screen stat_overlay
+    
     show e_happy
     e "응! 걔는 내 차애고 내 최애는 ISTP야!>< 너무 잘생겼어 나 지갑에 포카 있잖아~ 한번 봐봐ㅋㅋㅋㅋ"
     hide e_happy
@@ -59,13 +59,13 @@
             $friendship -= 20
             hide e_sad
             
-    show screen stat_overlay
+    
    
 
     ##굿즈판매소 줄 기다리기
     show e_norm with dissolve
     e "와 사람 진짜 많다ㄷㄷ 너 말대로 빠릿빠릿하게 욺직이길 잘했네."
-    hide screen stat_overlay
+    
     p "..."
     p "너 시간 계산은 해봤냐ㅋㅋㅋ"
     e "아닠ㅋㅋ 운명에 맡기는거지~"
@@ -87,12 +87,12 @@
     pause 1
     hide text
     with dissolve
-    show screen stat_overlay
+    
 
     ##콘서트장 앞
     show e_norm
     e "음냐~ 콘서트 이제 1시간 남았네"
-    hide screen stat_overlay
+    
     p "맞아 얼마 안남았어"
     e "으아 떨린다! OO이 얼굴 볼 생각하니까 너무 좋아ㅠㅠ"
     e "직캠말고 직접 두눈으로 보는 날이 오다니!"
@@ -109,7 +109,7 @@
             e "칫 구경만 할꺼거든!"
             $friendship -= 20
             hide e_awk
-    show screen stat_overlay
+    
     p "그럼 다행이고 ^^"
 
     ##콘서트장 앞 대기줄
@@ -137,14 +137,14 @@
             e "음정 키업 되니까 주의하면 돼!"
             $friendship += 20
             hide e_happy
-    show screen stat_overlay
+    
     ##
     show text "그렇게 콘서트가 잘 마무리된 후..." at truecenter
     with dissolve
     pause 1
     hide text
     with dissolve
-    hide screen stat_overlay
+    
     show e_happy
     e "야야 마지막에 앵콜노래 나올 때 봤어? OO이가 나 보고 하트 날려줬어ㅠㅠㅠㅠ"
     e "나 심장 멎을 것만 같아"
@@ -160,11 +160,11 @@
             e "진짜 너무하네 아 그렇다고 해주면 되지 뭘 그렇게 딱 잡아서 아니라고 하냐! 칫..."
             $friendship -= 20
             hide e_awk
-    show screen stat_overlay
+    
     ##콘서트장 앞
     show e_norm
     e "이제 헤어질 시간이네~ 오늘 싸인포카도 얻고, 최애한테 하트도 받고 너무 행복한 시간이었다!"
-    hide screen stat_overlay
+   
     p "흠.. 나는 완전 잊혀진 거같군ㅋㅋㅋㅋㅋ"
     e "아! 아니야! 진짜 까먹은거 아니얔ㅋㅋㅋ"
     e "잠시만 나 화장실 좀 갔다올게! 좀만 기다려줘"
@@ -205,6 +205,7 @@
             $friendship -= 20
             hide e_sad
             p "ㅋㅋㅋ 농담이야"
+    hide screen stat_overlay
 
     $ is_visited += 1                                                           # 장소마다 스크립트 마지막에 추가
 
