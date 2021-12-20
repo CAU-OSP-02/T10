@@ -280,7 +280,7 @@ screen messenger():
 
     # Interlocutor's Avatar
     frame background None xysize (400,650) at move_messenger:
-        add 'messenger/av/'+interlocutor.lower().replace(' ', '_')+'.png' pos (42,14)
+        add 'messenger/av/'+interlocutor.lower().replace(' ', '_')+'.png' pos (43,14)
         add 'messenger_background' pos (-6,-6)
         frame background None xysize (372, 525) align (0.1,0.58):
             viewport id 'vp_msg' mousewheel True  yadjustment yadj:
