@@ -183,7 +183,7 @@
     p "무료 나눔? 선착순? 이거 다 털릴 텐데"
     p "빨리 가서 ENFP꺼 챙겨야겠다."
 
-    call speedgame
+    call speedgame from _call_speedgame
     scene image "bg white.png"
     p "왔어?"
     show e_norm with dissolve

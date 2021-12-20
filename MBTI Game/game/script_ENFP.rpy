@@ -39,11 +39,11 @@ label ENFP:
     $ your_clothes = False
 
 label my_photo:
-    python:
-        my_photo = True
-        msg (None, pic="raven")
-        msg ("내 사진이야!")
-        msg ("오! 내 사진은 프로필에 있어! 확인해 봐.", who=1)
+    $ my_photo = True
+    $ face_type = renpy.call_screen("choice_face")
+    $ msg (None, pic="[face_type]")
+    $ msg ("내 사진이야!")
+    $ msg ("오! 내 사진은 프로필에 있어! 확인해 봐.", who=1)
     jump arrive
 
 label my_clothes:
@@ -90,4 +90,4 @@ label arrive:
     $ hide_messenger()
     window hide
 
-    jump minimap                                                                  # 맵으로 이동                                                   
+    jump minimap                                                                  # 맵으로 이동

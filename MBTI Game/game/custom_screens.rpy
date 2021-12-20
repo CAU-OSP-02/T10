@@ -1,3 +1,34 @@
+## 친밀도 창 ###################################################################
+init:
+    screen stat_overlay:
+
+        frame:
+            padding (15,15)
+            xalign 1.0
+            yalign 0.0
+            xoffset -20
+            yoffset 20
+            vbox:
+                text "친밀도" size 20
+                bar:
+                    value friendship
+                    range 100
+                    style "fixed_bar"
+                text " " size 3
+
+init -5 python:
+    style.fixed_bar = Style(style.default)
+    style.fixed_bar.xmaximum = 200
+    style.fixed_bar.ymaximum = 30
+    style.fixed_bar.left_gutter = 0
+    style.fixed_bar.right_gutter = 0
+    style.fixed_bar.left_bar = Frame("images/heart.png", 0, 0)
+    style.fixed_bar.right_bar = Frame("images/emptyheart.png", 0, 0)
+
+init python:
+    res = False
+
+
 ## 다른 장소로 이동하기 버튼 ####################################################
 screen placeUI:
     imagebutton:
@@ -14,14 +45,6 @@ screen placeUI:
 screen MapUI():
     tag statusUI
     add "map/bg map.png"
-
-    imagebutton:
-        xalign 0.0
-        yalign 0.0
-        xoffset 30
-        yoffset 30
-        auto "UI/ending_%s.png"
-        action Jump("ending")
 
     imagebutton:
         xpos 388
@@ -94,7 +117,7 @@ screen choice_mbti():
         spacing 25
 
         text "원하는 MBTI 유형을 선택하세요.":
-            size 30
+            size 25
             color "#000000"
             xalign 0.5
 
@@ -108,10 +131,47 @@ screen choice_mbti():
 
                     textbutton "[i]":
                         text_size 25
-                        xalign 0.5
-                        yalign 0.5
+                        xalign .5
+                        yalign .5
                         if i == "ENFP":
                             action Jump(i)
                         else:
                             action Notify("서비스 준비 중")
 
+
+## 얼굴 선택 스크린 ##############################################################
+
+screen choice_face():
+    vbox:
+        xalign 0.22 yalign 0.5
+        spacing 23
+
+        text "나는 어떻게 생겼을까?":
+            size 23
+            color "#ffffff"
+            xalign 0.5
+
+        grid 2 2:
+            spacing 30
+            xsize 100
+            ysize 60
+
+            imagebutton:
+                idle "messenger/pic/1.png"
+                hover im.MatrixColor("messenger/pic/1.png", im.matrix.brightness(-0.1))
+                action Return("1")
+
+            imagebutton:
+                idle "messenger/pic/2.png"
+                hover im.MatrixColor("messenger/pic/2.png", im.matrix.brightness(-0.1))
+                action Return("2")
+
+            imagebutton:
+                idle "messenger/pic/3.png"
+                hover im.MatrixColor("messenger/pic/3.png", im.matrix.brightness(-0.1))
+                action Return("3")
+
+            imagebutton:
+                idle "messenger/pic/4.png"
+                hover im.MatrixColor("messenger/pic/4.png", im.matrix.brightness(-0.1))
+                action Return("4")

@@ -6,6 +6,7 @@ label theater:
     show screen placeUI with dissolve
     play music "audio/bgm theater.mp3" fadeout 1
     show screen stat_overlay
+
     "우리는 영화를 보러 영화관에 왔다.{p}우리 행성에서도 지구 영화는 꽤 유명해서, 나도 몇 번 본 적이 있다."
 
     e "무슨 영화 볼래?"
@@ -47,7 +48,6 @@ label theater:
                     "농담이야.":
                         "ENFP의 표정이 갑자기 밝아졌다. 나만 알고 싶은 영화… 뭐 그런 건가?"
                         $ friendship += 20
-        
 
     label popcorn:
         show bg box_office:
@@ -74,7 +74,7 @@ label theater:
                     "따라가지 않는다":
                         "팝콘 사 올 때까지 구경이나 해야겠다."
                         $ friendship -= 20
-        
+        hide screen stat_overlay
 
     label movie_start:
         scene bg theater with fade
@@ -229,6 +229,7 @@ label theater:
 
     hide screen placeUI with dissolve
     hide screen stat_overlay
+
     $ is_visited += 1                                                           # 장소마다 스크립트 마지막에 추가
 
     if is_visited == 4:                                                         # 4곳 모두 방문 시 엔딩으로, 아니면 맵으로 돌아감
