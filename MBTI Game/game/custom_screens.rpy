@@ -1,14 +1,15 @@
-## Screen with Stats Button
-screen gameUI:
+## 다른 장소로 이동하기 버튼 ####################################################
+screen placeUI:
     imagebutton:
-        xalign 1.0
+        xalign 0.0
         yalign 0.0
-        xoffset -30
+        xoffset 30
         yoffset 30
         auto "UI/minimap_%s.png"
         action ShowMenu("MapUI")
 
-## Stats UI
+## 미니맵 스크린 ################################################################
+
 screen MapUI():
     tag statusUI
     add "map/bg map.png"

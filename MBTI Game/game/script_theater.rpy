@@ -1,7 +1,9 @@
 label theater:
+
     scene bg box_office:
         xalign 0
-    with fade
+    with slowfade
+    show screen placeUI with dissolve
     play music "audio/bgm theater.mp3" fadeout 1
 
     "우리는 영화를 보러 영화관에 왔다.{p}우리 행성에서도 지구 영화는 꽤 유명해서, 나도 몇 번 본 적이 있다."
@@ -211,6 +213,7 @@ label theater:
                 e "어? 어. 근데 이 영화 왜 보자고 해ㅆ..."
                 p "팝콘은 역시 카라멜이지!"
 
+    hide screen placeUI with dissolve
 
     $ is_visited += 1                                                           # 장소마다 스크립트 마지막에 추가
 

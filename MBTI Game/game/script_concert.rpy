@@ -1,56 +1,6 @@
-﻿# 이 파일에 게임 스크립트를 입력합니다.
-
-# image 문을 사용해 이미지를 정의합니다.
-image heart:
-         "heart.png"
-         size(30,30)
-image empty_heart:
-         "emptyheart.png"
-         size(30,30)
-
-
-# 게임에서 사용할 캐릭터를 정의합니다.
-
-
-#친밀도
-#define friendship = 0
-
-#친밀도 창
-init:
-    screen stat_overlay:
-
-        frame:
-            padding (15,15)
-            align(1.0, 0.0)
-            xmaximum 250
-            ymaximum 250
-            vbox:
-                text "친밀도" size 16 
-                bar:
-                    value friendship
-                    range 100
-                    style "fixed_bar"
-                text " " size 3
-          
-init -5 python:
-    style.fixed_bar = Style(style.default)
-    style.fixed_bar.xmaximum = 200
-    style.fixed_bar.ymaximum = 30
-    style.fixed_bar.left_gutter = 0
-    style.fixed_bar.right_gutter = 0
-    style.fixed_bar.left_bar = Frame("images/heart.png", 0, 0)
-    style.fixed_bar.right_bar = Frame("images/emptyheart.png", 0, 0)
-
-init python:
-    res = False
-
-
-
-# 여기에서부터 게임이 시작합니다.
-
-    
-label concert:
+﻿label concert:
                 scene bg platform with slowfade
+                show screen placeUI with dissolve
                 play music "audio/bgm chat.mp3" fadein 1 fadeout 1
                 
                 show e with dissolve
@@ -237,6 +187,8 @@ label concert:
                 hide e with dissolve
 
                 $friendship = 0
+
+                hide screen placeUI with dissolve
                 
                 $ is_visited += 1                                                           # 장소마다 스크립트 마지막에 추가
 

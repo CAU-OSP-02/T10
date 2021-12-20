@@ -8,6 +8,9 @@ image bg ending = "#F6F6F6"                                                     
 define nv = nvl_narrator
 define p = DynamicCharacter("player_name")
 define e = Character("ENFP", color="#FFCCCC")
+define ti = Character('TI팬클럽회장', color="#353535")
+define so = Character('가게 아주머니', color="#ff9dd2")
+define sm = Character('가게 종업원', color="9fff9d")
 
 init:
     $ name = "player_name"

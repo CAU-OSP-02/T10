@@ -2,9 +2,21 @@
 errors listed below, and try again.
 
 
-File "game/script_shoppingmall.rpy", line 69: end of line expected.
-    e "여기 두 벌인데, 나는 이게 쪼오끔 더 마음에 드는 것 같아. 예쁘긴 한데 살짝 얇아보여서 걱정이야." "옆에 거가 좀 더 실용적으로 입을 수 있을 거 같긴 해."
-                                                                 ^
+File "game/script_minimap.rpy", line 6: end of line expected.
+    call shoppingmall with fade
+                      ^
+
+File "game/script_minimap.rpy", line 9: end of line expected.
+    call theater with fade
+                 ^
+
+File "game/script_minimap.rpy", line 12: end of line expected.
+    call PCroom with fade
+                ^
+
+File "game/script_minimap.rpy", line 15: end of line expected.
+    call concert with fade
+                 ^
 
 Ren'Py Version: Ren'Py 7.4.11.2266
-Mon Dec 20 13:29:48 2021
+Mon Dec 20 15:09:39 2021

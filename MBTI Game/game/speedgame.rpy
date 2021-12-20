@@ -1,4 +1,3 @@
-
 init python:
     # 화면 중앙에 창
     import os

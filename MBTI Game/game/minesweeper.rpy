@@ -2,17 +2,17 @@ default board = Board(9)
 
 label start_minesweeper:
     menu:
-        "Board size?"
-        "9":
+        "게임판의 크기를 정해주세요."
+        "9x9":
             $ board = Board(9)
-        "12":
+        "12x12":
             $ board = Board(12)
 
     menu:
-        "How many mines?"
-        "10":
+        "지뢰의 개수를 정해주세요."
+        "10개":
             $ board.create_board(10)
-        "20":
+        "20개":
             $ board.create_board(20)
 
     call screen minesweeper(board.dict)
@@ -20,16 +20,16 @@ label start_minesweeper:
 label lost_minesweeper:
     show screen minesweeper(board.dict, True)
 
-    "Mine"
+    "땡! 지뢰를 누르셨네요."
     hide screen minesweeper
 
     menu:
-        "Retry?"
+        "다시 도전해보시겠습니까?"
 
-        "Retry":
+        "재도전":
             jump start_minesweeper
 
-        "End game":
+        "게임 끝내기":
             "End game"
             return     
             
@@ -37,14 +37,14 @@ label lost_minesweeper:
 
 label won_minesweeper:
     show screen minesweeper(board.dict, True)
-    "Win."
+    "축하합니다! 게임에서 이기셨어요:)"
     hide screen minesweeper
 
 
 screen minesweeper(board, active=False):
 
     fixed:
-        xoffset 350
+        xoffset 450
         yoffset 150
 
         for key, tile in board.iteritems():

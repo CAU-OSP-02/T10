@@ -1,8 +1,6 @@
 label minimap:
-
-    show screen gameUI
-    "test"
-    return
+    play music "audio/bgm map.mp3" fadein 1 fadeout 1
+    call screen MapUI
 
 label shoppingmall_pressed:
     call shoppingmall
@@ -11,7 +9,7 @@ label theater_pressed:
     call theater
 
 label PCroom_pressed:
-    call PCroom
+    call PCroom 
 
 label concert_pressed:
     call concert

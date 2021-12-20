@@ -9,12 +9,6 @@ image empty_heart:
          size(30,30)
 image restaurant_menu = "restaurant_menu.png"
 
-
-# 게임에서 사용할 캐릭터를 정의합니다.
-define ti = Character('TI팬클럽회장', color="#353535")
-define so = Character('가게 아주머니', color="#ff9dd2")
-define sm = Character('가게 종업원', color="9fff9d")
-
 #친밀도 창
 init:
     screen stat_overlay:
@@ -25,7 +19,7 @@ init:
             xmaximum 250
             ymaximum 250
             vbox:
-                text "친밀도" size 16
+                text "친밀도" size 20
                 bar:
                     value friendship
                     range 100
@@ -41,10 +35,15 @@ init -5 python:
     style.fixed_bar.left_bar = Frame("images/heart.png", 0, 0)
     style.fixed_bar.right_bar = Frame("images/emptyheart.png", 0, 0)
 
+init python:
+    res = False
+
 
 # 여기에서부터 게임이 시작합니다.
 label shoppingmall:
+
     scene bg platform with slowfade
+    show screen placeUI with dissolve
     play music "audio/bgm chat.mp3" fadein 1 fadeout 1
 
     show e with dissolve
@@ -214,6 +213,8 @@ label shoppingmall:
     p "그러네. 오늘 재밌었다~"
     e "우리 내일 또 놀자! 내일도 놀고 내일 모레도 놀고, [player_name](이)랑 맨날 같이 놀고 싶네!"
     p "ㅋㅋㅋ 그래 그래."
+
+    hide screen placeUI with dissolve
 
     $ is_visited += 1                                                           # 장소마다 스크립트 마지막에 추가
 

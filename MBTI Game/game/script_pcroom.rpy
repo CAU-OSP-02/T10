@@ -1,48 +1,11 @@
 ﻿#이미지
 image e = im.FactorScale("e.png", 1)
-image pc:
-       "bg pc.jpg"
-       size(1280, 720)
-image heart:
-         "heart.png"
-         size(30,30)
-image empty_heart:
-         "emptyheart.png"
-         size(30,30)
-
-#친밀도
-#define friendship = 0
-
-#친밀도 창
-init:
-    screen stat_overlay:
-
-        frame:
-            padding (15,15)
-            align(1.0, 0.0)
-            xmaximum 250
-            ymaximum 250
-            vbox:
-                text "친밀도" size 16
-                bar:
-                    value friendship
-                    range 100
-                    style "fixed_bar"
-                text " " size 3
-           
-init -5 python:
-    style.fixed_bar = Style(style.default)
-    style.fixed_bar.xmaximum = 200
-    style.fixed_bar.ymaximum = 30
-    style.fixed_bar.left_gutter = 0
-    style.fixed_bar.right_gutter = 0
-    style.fixed_bar.left_bar = Frame("images/heart.png", 0, 0)
-    style.fixed_bar.right_bar = Frame("images/emptyheart.png", 0, 0)
 
 #대본
 label PCroom:
 
   scene bg platform with slowfade
+  show screen placeUI with dissolve
   play music "audio/bgm chat.mp3" fadein 1 fadeout 1
   
   show e with dissolve
@@ -55,9 +18,9 @@ label PCroom:
   hide e with dissolve
   
   scene bg pcroom with fade
-  play music "audio/bgm pcroom.mp3" fadein 1 fadeout 1 loop 
+  play music "audio/bgm pcroom.mp3" fadein 1 fadeout 1 volume 0.7
   
-  show e with fade
+  show e with dissolve
   e "여기 담배 냄새 나니깐 저기 구석으로 가자"
   $friendship += 20
   show screen stat_overlay
@@ -68,9 +31,9 @@ label PCroom:
   p "둘이 같이 할 수 있는거 하자"
   e "그럼 둘이 할 수 있는 피파하자"
   p "좋아"
-  hide e with fade
+  hide e with dissolve
 
-  show e at right with dissolve
+  show e with fade
   e "아...이걸 지네"
   p "너무 쉽다 잘 좀 해봐"
   e "내가 실수 한거야!"
@@ -78,7 +41,7 @@ label PCroom:
   p "그래그래 내가 특별히 다시 해줄게^^"
   hide e with dissolve
 
-  show e at right with fade
+  show e with fade
   e "거봐 다시하면 이긴다고 했지 ㅋㅋ"
   menu: 
       "오 잘하네":
@@ -88,7 +51,7 @@ label PCroom:
       "노잼":
         $friendship -= 20
   show screen stat_overlay
-  hide e with fade
+  hide e with dissolve
   hide screen stat_overlay
 
   show e with fade
@@ -126,9 +89,9 @@ label PCroom:
   e "그냥 지뢰가 없는 칸을 모두 찾아 클릭하면 되는 거야"
   e "생각보다 머리 많이 써야되는 게임이다"
   p "그럼 처음 해도 내가 이기겠는데??ㅋㅋㅋㅋㅋ"
-  e "무슨소리야 당연히 내가 이기지 ㅋㅋㅋㅋㅋ"
+  e "무슨 소리야 당연히 내가 이기지 ㅋㅋㅋㅋㅋ"
   p "그럼 한번 해보자"
-  hide e with fade
+  hide e with dissolve
   
   show e with dissolve
   e "그럼 지뢰찾기 게임 시작한다. 마우스 오른쪽 버튼은 깃발 표시하는거야. 잘해봐^^"
@@ -137,6 +100,8 @@ label PCroom:
   call start_minesweeper
 
   $friendship = 0
+
+  hide screen placeUI with dissolve
 
   $ is_visited += 1                                                           # 장소마다 스크립트 마지막에 추가
 
