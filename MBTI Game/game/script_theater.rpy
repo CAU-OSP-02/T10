@@ -42,13 +42,13 @@ label theater:
                 menu:
                     "응. 꼭 보고 싶어.":
                         "ENFP의 표정이 안 좋은 것 같은데, 어디 아픈가?"
-                        $friendship -= 20
-
+                        $ friendship -= 20
 
                     "농담이야.":
                         "ENFP의 표정이 갑자기 밝아졌다. 나만 알고 싶은 영화… 뭐 그런 건가?"
-                        $friendship += 20
-        show screen stat_overlay 
+                        $ friendship += 20
+        show screen stat_overlay
+
     label popcorn:
         show bg box_office:
             linear 1.5 xalign 1.0
@@ -60,20 +60,20 @@ label theater:
             "좋아!":
                 p "넌 무슨 맛 먹을래? 난 카라멜."
                 e "난 어니언! 콜라도 사자."
-                $friendship += 20
+                $ friendship += 20
 
             "난 괜찮아.":
                 p "난 영화 볼 때 팝콘 잘 안 먹어서. 너 먹고 싶으면 사."
                 e "아… 그래? 그럼 팝콘 사올게. 좀만 기다려!"
-                $friendship -= 20
+                $ friendship -= 20
                 menu:
                     "따라간다":
                         p "그래도 같이 가야지."
                         e "나중에 먹고 싶으면 내 거 좀 먹어도 돼. ㅎㅎ"
-                        $friendship += 20
+                        $ friendship += 20
                     "따라가지 않는다":
                         "팝콘 사 올 때까지 구경이나 해야겠다."
-                        $friendship -= 20
+                        $ friendship -= 20
         hide screen stat_overlay
 
     label movie_start:
@@ -83,7 +83,7 @@ label theater:
         if flag_movie == "conjuring":
             e "허억!!"
             "갑자기 귀신이 튀어나오는 장면에서 ENFP가 깜짝 놀라며 팝콘을 사방팔방 튀겨댔다.{w} 그 모습을 보며 든 생각은…"
-           
+
             menu:
                 "나도 무섭다. ㅠ":
                     $ flag_feedback = 1
@@ -157,14 +157,17 @@ label theater:
             if flag_feedback == 1:
                 p "나도…. 너무 놀라서 심장 아파."
                 e "그치? 난 수녀귀신? 얼굴이 너무 무섭더라ㅠㅠ"
+                $ friendship += 20
 
             if flag_feedback == 2:
                 p "아 ㅋㅋ 네 반응이 너무 웃겨서 집중이 안됐어."
                 e "우씨.. 나 때문에 웃었던 거였어!"
+                $ friendship -= 20
 
             if flag_feedback == 3:
                 p "영화는 그렇게 무서운 줄 모르겠던데…. 난 네 비명 때문에 놀랐어."
                 e "으악 미안하다 ㅋㅋㅋ"
+                $ friendship -= 20
 
 
         # 조커
@@ -175,14 +178,17 @@ label theater:
                 p "난 액션 영화인 줄 알고 고른 거라 좀 지루하더라."
                 e "나도 처음엔 그런 줄 알았는데, 막상 보니 괜찮던데?"
                 p "그래? 난 사실 무슨 얘기하고 싶은 건지 잘 모르겠어."
+                $ friendship -= 20
 
             if flag_feedback == 2:
                 p "돈이 안 아깝다는 게 바로 이런 거지. 진짜 가취있는 영화였다."
                 e "진짜 인정. 그래서 ‘가취있기를’ 뜻이 뭐야?"
+                $ friendship += 20
 
             if flag_feedback == 3:
                 p "연기는 좋긴 한데 내용은 좀…. 범죄 미화하는 것 같기도 하고."
                 e "음… 그렇게 볼 영화는 아니지 않아?"
+                $ friendship -= 20
 
 
         # 7번방의 선물
@@ -193,10 +199,12 @@ label theater:
                 p "예승이… 세일러문 가방…"
                 "ENFP가 내 몰골을 보곤 이해했다는 듯 고개를 끄덕인다."
                 e "그래… 그래 보여."
+                $ friendship += 20
 
             if flag_feedback == 2:
                 p "좀 억지스러워서 몰입이 잘 안 됐어."
                 e "아 진짜? 배우들 너무 잘하던데.. 난 슬펐어. ㅠㅠ"
+                $ friendship -= 20
 
 
         # 자전차왕 엄복동
@@ -211,11 +219,13 @@ label theater:
             if flag_feedback == 2:
                 p "재밌었어!!"
                 e "뭐…?"
+                $ friendship -= 20
 
             if flag_feedback == 3:
                 p "아~ 팝콘 맛있었다."
                 e "어? 어. 근데 이 영화 왜 보자고 해ㅆ..."
                 p "팝콘은 역시 카라멜이지!"
+                $ friendship -= 20
 
     hide screen placeUI with dissolve
 
