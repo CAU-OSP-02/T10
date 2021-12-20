@@ -58,14 +58,14 @@ label PCroom:
   hide e_norm
   menu:
       "응 식당보다 맛있진 않지만 귀찮으니간 여기서 먹자":
+         $friendship -= 20
         show e_sad
         e "맛있는 거 먹고 싶긴한데..."
-        $friendship -= 20
         hide e_sad
       "피시방 밥 비싼데 밖에 나가서 맛있는 식당 찾아보자":
+        $friendship += 20
         show e_happy
         e "좋다"
-        $friendship += 20
         hide e_happy
 
   show e_norm   
@@ -76,16 +76,16 @@ label PCroom:
   menu:
       "좋다, 재밌겠다":
         show e_happy
-        e "무슨 게임으로 내기할까?"
         $friendship += 20
+        e "무슨 게임으로 내기할까?"
         hide e_happy
       "싫어..":
         show e_awk
-        e "오키..그럼 나가기 전에 게임 하나 하고 가자"
         $friendship -= 20
+        e "오키..그럼 나가기 전에 게임 하나 하고 가자"
         hide e_awkward
 
-  show e_normal
+  show e_norm
   e "지뢰찾기 게임 어때?"
   p "지뢰찾기 게임이 뭐지??"
   p "어떻게 하는지 알려줘"
