@@ -58,7 +58,7 @@ label PCroom:
   hide e_norm
   menu:
       "응 식당보다 맛있진 않지만 귀찮으니간 여기서 먹자":
-         $friendship -= 20
+        $friendship -= 20
         show e_sad
         e "맛있는 거 먹고 싶긴한데..."
         hide e_sad

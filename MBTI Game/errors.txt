@@ -2,13 +2,7 @@
 errors listed below, and try again.
 
 
-File "game/script_pcroom.rpy", line 61: choice menuitem expects a non-empty block.
-    "응 식당보다 맛있진 않지만 귀찮으니간 여기서 먹자":
-                                  ^
-
-File "game/script_pcroom.rpy", line 78: choice menuitem expects a non-empty block.
-    "좋다, 재밌겠다":
-               ^
+File "game/script_pcroom.rpy", line 62: indentation mismatch.
 
 Ren'Py Version: Ren'Py 7.4.11.2266
-Mon Dec 20 19:43:31 2021
+Mon Dec 20 23:02:45 2021
